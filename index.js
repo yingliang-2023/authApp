@@ -80,12 +80,12 @@ app.get('/',
 );
 
 app.get('/private',
-    connectEnsureLogin.ensureLoggedIn.ensureLoggedIn(),
+    connectEnsureLogin.ensureLoggedIn(),
 (req,res) => res.sendFile('html/private.html', {root:__dirname})
 );
 
 app.get('/user',
-    connectEnsureLogin.ensureLoggedIn.ensureLoggedIn(),
+    connectEnsureLogin.ensureLoggedIn(),
 (req,res) => res.send({user:req.user})
 );
 
@@ -96,8 +96,11 @@ app.get('/logout',
     {root:__dirname})
 });
 
+//register some users
 
-
+// UserDetails.register({username: 'paul',active:false},'paul');
+// UserDetails.register({username: 'joy',active:false},'joy');
+// UserDetails.register({username: 'ray',active:false},'ray');
 
 
 
